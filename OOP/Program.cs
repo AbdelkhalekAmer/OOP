@@ -12,6 +12,11 @@ namespace OOP
         protected int protectedField = 1;
         public int publicField = 1;
 
+        static Parent()
+        {
+            Console.WriteLine("Parent: Static Ctor is accessed");
+        }
+
         public Parent()
         {
             Console.WriteLine("Parent is instantiated");
@@ -27,6 +32,11 @@ namespace OOP
     {
         protected new int protectedField = 5;
         public new int publicField = 5;
+
+        static Child() // no access modifiers and it runs once in the app during the first object initialization
+        {
+            Console.WriteLine("Child: Static Ctor is accessed");
+        }
 
         public Child()
         {
@@ -72,6 +82,12 @@ namespace OOP
             //obj.printChildInnerData();
 
             var obj = new Child();
+
+            var obj2 = new Child();
+
+            var parent = new Parent();
+
+            var obj3 = new Child();
 
         }
     }
