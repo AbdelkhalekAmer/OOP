@@ -26,6 +26,12 @@ namespace OOP
         {
             Console.WriteLine("Hello world from Parent");
         }
+
+        public virtual void NonOverridableMethod()
+        {
+            Console.WriteLine("Parent: NonOverridableMethod");
+        }
+
     }
 
     public class Child : Parent
@@ -68,6 +74,18 @@ namespace OOP
             return a + (int)b;
         }
 
+        public sealed override void NonOverridableMethod()
+        {
+            Console.WriteLine("Child: NonOverridableMethod");
+        }
+    }
+
+    public class ChildOfChild : Child
+    {
+        public new void NonOverridableMethod()
+        {
+            Console.WriteLine("Child: NonOverridableMethod");
+        }
     }
 
     internal class Program
