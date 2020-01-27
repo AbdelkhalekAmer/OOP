@@ -32,6 +32,12 @@ namespace OOP
             Console.WriteLine("Parent: NonOverridableMethod");
         }
 
+        // Connot mark static method as virtual, override or abstract
+        //public virtual static void StaticMethod()
+        //{
+
+        //}
+
     }
 
     public class Child : Parent
